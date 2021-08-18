@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+  </head>
+  <body>
+    <h1>Covid Based AH Insurance Annual Premium Estimate:</h1>
+    <form action={% url 'result' %} method="PUT">
+      {% csrf_token %}
+      
+      <p>Covid Vaccination Status (1/0):</p>
+      <input type="text" name="VaxStatus">
+      <br>
+
+      <p>Age:</p>
+      <input type="text" name="Age">
+      <br>
+
+      <p>Smoker (1/0):</p>
+      <input type="text" name="Smoke">
+      <br>
+
+      <p>State:</p>
+      <input type="text" name="State">
+      <br>
+
+      <input type="submit" value='Get Predictions'>
+    </form>
+  </body>
+</html>
